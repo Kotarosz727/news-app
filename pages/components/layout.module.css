@@ -1,0 +1,12 @@
+.container {
+  width: 1000px;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.main {
+  display: block;
+  width: 700px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
