@@ -14,7 +14,7 @@ export default function Acticle({ data, head }) {
       <div>
         <h1>{head}</h1>
         <ul>
-          {data.map((article, index) => (
+          {data?.map((article, index) => (
             <div>
               <li>
                 <div
