@@ -20,6 +20,16 @@ export default function Sidebar() {
               <a>The Guardian</a>
             </Link>
           </li>
+          <li className={styles.sidebar_item}>
+            <Link href="/news/nikkei">
+              <a>日本経済新聞</a>
+            </Link>
+          </li>
+          <li className={styles.sidebar_item}>
+            <Link href="/news/nikkeibusiness">
+              <a>日経ビジネス</a>
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
