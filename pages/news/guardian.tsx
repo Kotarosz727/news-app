@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
 import Article from "../components/article";
-import { fetchNewsData, translate } from "../../lib/api";
+import { fetchNewsData } from "../../lib/api";
 
 function GUARDIAN({ guardianArticles }) {
   return <Article head="The Guardian" data={guardianArticles}></Article>;
@@ -9,7 +9,7 @@ function GUARDIAN({ guardianArticles }) {
 export const getStaticProps: GetStaticProps = async () => {
   const url: string = process.env.GUARDIAN_URL;
   const json = await fetchNewsData(url);
-  const guardianArticles:{ title: string; url: string }[] = [];
+  const guardianArticles: { title: string; url: string }[] = [];
   //pick up title and abstract from json object
   json.response.results.map((e) => {
     guardianArticles.push({
@@ -17,6 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
       url: e.webUrl,
     });
   });
+  console.log("guardianArticles", guardianArticles);
 
   return {
     props: {

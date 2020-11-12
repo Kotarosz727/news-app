@@ -10,6 +10,7 @@ export default function Acticle({ data, head }) {
     const elm = document.getElementById(id);
     elm.innerHTML = title_jpn;
   };
+  const header = head;
   return (
     <Layout siteTitle={head}>
       <div>
@@ -18,13 +19,19 @@ export default function Acticle({ data, head }) {
           {data?.map((article, index) => (
             <div>
               <li>
-                <div
-                  id={index}
-                  className={styles.title}
-                  onMouseOver={() => fetchTitle(index, article.title)}
-                >
-                  {article.title}
-                </div>
+                {header == "NewYorkTimes" || header == "The Guardian" ? (
+                  <div
+                    id={index}
+                    className={styles.title}
+                    onMouseOver={() => fetchTitle(index, article.title)}
+                  >
+                    {article.title}
+                  </div>
+                ) : (
+                  <div id={index} className={styles.title}>
+                    {article.title}
+                  </div>
+                )}
                 <br></br>
                 <div className={styles.url}>
                   <a href={article.url}>{article.url}</a>
