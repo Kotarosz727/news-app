@@ -7,9 +7,6 @@ export default function Sidebar() {
     <div className={styles.sidebar}>
       <div>
         <ul className={styles.ul}>
-        <li className={styles.sidebar_item_top}>
-            News APIs
-        </li>    
           <li className={styles.sidebar_item}>
             <Link href="/news/newyorktimes">
               <a>NewYorkTimes</a>
