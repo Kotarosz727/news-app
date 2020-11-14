@@ -22,6 +22,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       nikkeiBusinessArticles,
     },
-    revalidate: 1,
+    revalidate: 10800,
   };
 };
