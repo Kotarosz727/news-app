@@ -27,6 +27,31 @@ export default function Sidebar() {
               <a>日経ビジネス</a>
             </Link>
           </li>
+          <li className={styles.sidebar_item}>
+            <Link href="/news/japantimes">
+              <a>the japan times</a>
+            </Link>
+          </li>
+          <li className={styles.sidebar_item}>
+            <Link href="/news/asahi">
+              <a>朝日新聞</a>
+            </Link>
+          </li>
+          <li className={styles.sidebar_item}>
+            <Link href="/news/sankei">
+              <a>産経新聞</a>
+            </Link>
+          </li>
+          <li className={styles.sidebar_item}>
+            <Link href="/news/bbc">
+              <a>BBC NEWS</a>
+            </Link>
+          </li>
+          <li className={styles.sidebar_item}>
+            <Link href="/news/wsj">
+              <a>THE WALL STREET JOURNAL</a>
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

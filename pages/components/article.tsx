@@ -10,7 +10,8 @@ export default function Acticle({ data, head }) {
     const elm = document.getElementById(id);
     elm.innerHTML = title_jpn;
   };
-  const header = head;
+  const header: string = head;
+  const english_article: string[] = ["NewYorkTimes", "The Guardian", "the japan times", "BBC NEWS", "THE WALL STREET JOURNAL"];
   return (
     <Layout siteTitle={head}>
       <div>
@@ -19,7 +20,7 @@ export default function Acticle({ data, head }) {
           {data?.map((article, index) => (
             <div>
               <li>
-                {header == "NewYorkTimes" || header == "The Guardian" ? (
+                { english_article.findIndex(item => item === header) >=0 ? (
                   <div
                     id={index}
                     className={styles.title}
