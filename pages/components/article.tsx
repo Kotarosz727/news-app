@@ -11,37 +11,45 @@ export default function Acticle({ data, head }) {
     elm.innerHTML = title_jpn;
   };
   const header: string = head;
-  const english_article: string[] = ["NewYorkTimes", "The Guardian", "the japan times", "BBC NEWS", "THE WALL STREET JOURNAL"];
+  const english_article: string[] = [
+    "NewYorkTimes",
+    "The Guardian",
+    "the japan times",
+    "BBC NEWS",
+    "THE WALL STREET JOURNAL",
+  ];
   return (
     <Layout siteTitle={head}>
       <div>
-        <h1>{head}</h1>
-        <ul className={styles.ul}>
-          {data?.map((article, index) => (
-            <div>
-              <li>
-                { english_article.findIndex(item => item === header) >=0 ? (
-                  <div
-                    id={index}
-                    className={styles.title}
-                    onMouseOver={() => fetchTitle(index, article.title)}
-                  >
-                    {article.title}
+        <h1 className={styles.head}>{head}</h1>
+        <div className={styles.contents}>
+          <ul className={styles.ul}>
+            {data?.map((article, index) => (
+              <div>
+                <li>
+                  {english_article.findIndex((item) => item === header) >= 0 ? (
+                    <div
+                      id={index}
+                      className={styles.title}
+                      onMouseOver={() => fetchTitle(index, article.title)}
+                    >
+                      {article.title}
+                    </div>
+                  ) : (
+                    <div id={index} className={styles.title}>
+                      {article.title}
+                    </div>
+                  )}
+                  <br></br>
+                  <div className={styles.url}>
+                    <a href={article.url}>{article.url}</a>
                   </div>
-                ) : (
-                  <div id={index} className={styles.title}>
-                    {article.title}
-                  </div>
-                )}
+                </li>
                 <br></br>
-                <div className={styles.url}>
-                  <a href={article.url}>{article.url}</a>
-                </div>
-              </li>
-              <br></br>
-            </div>
-          ))}
-        </ul>
+              </div>
+            ))}
+          </ul>
+        </div>
       </div>
     </Layout>
   );
