@@ -1,20 +1,16 @@
 .sidebar {
   width: 300px;
-  background-color: black;
-}
-.sidebar_item_top {
-  margin-bottom: 20px;
-  font-style: normal;
-  color: white;
-  font-size: 2.0rem;
-  position: sticky;
+  background-color: #111111;
 }
 .sidebar_item {
   margin-bottom: 20px;
   font-style: normal;
   color: white;
   font-size: 1.6rem;
+  
 }
 .ul {
   list-style: none;
+  top: 10px;
+  position: sticky;
 }
